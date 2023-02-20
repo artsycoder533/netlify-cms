@@ -2,6 +2,11 @@ backend:
   name: github
   repo: artsycoder533/netlify-cms
 
+# Specify the path to your custom index.html file
+# Note: this assumes that your index.html file is in the admin folder
+local_backend:
+  url: /admin/index.html
+
 collections:
   - name: "hero"
     label: "Hero"

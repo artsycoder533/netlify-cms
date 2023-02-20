@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+    <meta charset="utf-8">
+    <title>My Custom CMS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/netlify-cms/dist/cms.css">
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms/dist/cms.js"></script>
   </head>
   <body>
-    <script src="https://cdn.netlify.com/git-gateway.js"></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <div id="netlify-cms"></div>
     <script>
-      window.CMS_MANUAL_INIT = true;
-      import("/admin/index.js").then((module) => {
-        module.init({
-          config: {
-            backend: {
-              name: "git-gateway",
-              branch: "main",
-            },
-            media_folder: "dist/images",
-            public_folder: "/images",
-            collections: [
-              {
-                name: "pages",
-                label: "Pages",
-                folder: "pages",
-                create: true,
-                slug: "{{slug}}",
-                fields: [
-                  { name: "heading", label: "Heading", widget: "string" },
-                  { name: "subheading", label: "Subheading", widget: "string"},
-                  {name: "background_image", label: "Background Image", widget: "image"}
-                ],
-              },
-            ],
+      CMS.registerPreviewStyle('/output.css');
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'artsycoder533/netlify-cms',
           },
-        });
+          media_folder: '/dist/images',
+          collections: [
+            {
+              name: 'hero',
+              label: 'Hero',
+              files: [
+                {
+                  file: '/dist/data/hero.yml',
+                  label: 'Hero',
+                  name: 'hero',
+                  fields: [
+                    { name: 'heading', label: 'Heading', widget: 'string' },
+                    { name: 'subheading', label: 'Subheading', widget: 'string' },
+                    { name: 'background_image', label: 'Background Image', widget: 'image' }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       });
     </script>
   </body>
 </html>
+
+
