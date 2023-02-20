@@ -5,25 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="output.css" type="text/css">
+    <link rel="stylesheet" href="output.css" type="text/css" />
     <!-- netlify cms stuff -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml/dist/js-yaml.min.js"></script>
-
+    <script>
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml/dist/js-yaml.min.js"></script>
   </head>
   <body>
     <main>
-      <div class="hero h-[500px] flex items-center justify-center" style="background-image: url('{{background_image}}')">
-        <div class="max-w-3xl flex flex-col justify-center gap-4">
+      <div class="hero h-[500px] relative">
+        <div
+          class="absolute inset-0"
+          style="background-image: url('{{background_image}}');"
+        >
+          <div class="bg-black opacity-70 absolute inset-0"></div>
+        </div>
+        <div
+          class="max-w-3xl flex flex-col justify-center gap-4 absolute inset-0 m-auto z-10 text-white"
+        >
           <h1 class="text-4xl uppercase">{{title}}</h1>
           <p>{{subtitle}}</p>
           <button
