@@ -27,8 +27,8 @@
               name: "git-gateway",
               branch: "main",
             },
-            media_folder: "static/img",
-            public_folder: "/img",
+            media_folder: "dist/images",
+            public_folder: "/images",
             collections: [
               {
                 name: "pages",
@@ -37,8 +37,9 @@
                 create: true,
                 slug: "{{slug}}",
                 fields: [
-                  { label: "Title", name: "title", widget: "string" },
-                  { label: "Body", name: "body", widget: "markdown" },
+                  { name: "heading", label: "Heading", widget: "string" },
+                  { name: "subheading", label: "Subheading", widget: "string"},
+                  {name: "background_image", label: "Background Image", widget: "image"}
                 ],
               },
             ],
