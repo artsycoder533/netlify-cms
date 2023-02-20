@@ -1,8 +1,8 @@
 function renderHero(data) {
   const header = document.querySelector(".hero");
   header.style.backgroundImage = `url('${data.background_image}')`;
-  header.querySelector("h1").textContent = data.title;
-  header.querySelector("p").textContent = data.subtitle;
+  header.querySelector("h1").textContent = data.heading;
+  header.querySelector("p").textContent = data.subheading;
 }
 
 fetch("/data/hero.yml")
