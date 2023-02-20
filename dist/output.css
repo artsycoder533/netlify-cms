@@ -1,0 +1,87 @@
+@tialwind base;
+
+.mt-3{
+  margin-top: 0.75rem
+}
+
+.flex{
+  display: flex
+}
+
+.h-\[500px\]{
+  height: 500px
+}
+
+.max-w-3xl{
+  max-width: 48rem
+}
+
+.cursor-pointer{
+  cursor: pointer
+}
+
+.flex-col{
+  flex-direction: column
+}
+
+.items-center{
+  align-items: center
+}
+
+.justify-center{
+  justify-content: center
+}
+
+.gap-4{
+  gap: 1rem
+}
+
+.self-start{
+  align-self: flex-start
+}
+
+.rounded-md{
+  border-radius: 0.375rem
+}
+
+.border{
+  border-width: 1px
+}
+
+.bg-blue-700{
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity))
+}
+
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+}
+
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem
+}
+
+.text-center{
+  text-align: center
+}
+
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem
+}
+
+.uppercase{
+  text-transform: uppercase
+}
+
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}
