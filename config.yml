@@ -6,7 +6,7 @@ collections:
   - name: "hero"
     label: "Hero"
     files:
-      - file: "./data/hero.yml"
+      - file: "./dist/data/hero.yml"
         label: "Hero"
         name: "hero"
         fields:

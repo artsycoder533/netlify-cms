@@ -5,7 +5,7 @@ function renderHero(data) {
   header.querySelector("p").textContent = data.subheading;
 }
 
-fetch("/data/hero.yml")
+fetch("./data/hero.yml")
   .then((response) => response.text())
   .then((yaml) => {
     const data = jsyaml.load(yaml);
