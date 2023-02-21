@@ -1,11 +1,9 @@
 backend:
   name: github
+  branch: main
   repo: artsycoder533/netlify-cms
 
-# Specify the path to your custom index.html file
-# Note: this assumes that your index.html file is in the admin folder
-local_backend:
-  url: /admin/index.html
+media_folder: "/dist/images"
 
 collections:
   - name: "hero"
@@ -18,4 +16,5 @@ collections:
           - { name: "heading", label: "Heading", widget: "string" }
           - { name: "subheading", label: "Subheading", widget: "string" }
           - { name: "background_image", label: "Background Image", widget: "image" }
+
 

@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/netlify-cms/dist/cms.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms/dist/netlify-cms.js"></script>
     <title>My Custom CMS</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/netlify-cms/dist/cms.css">
-    <script src="https://cdn.jsdelivr.net/npm/netlify-cms/dist/cms.js"></script>
+    
   </head>
   <body>
+    <div id="nc-root"></div>
     <script>
-      CMS.registerPreviewStyle('/output.css');
+      CMS.registerPreviewStyle("/output.css");
       CMS.init({
         config: {
           backend: {
-            name: 'github',
-            repo: 'artsycoder533/netlify-cms',
+            name: "github",
+            branch: "main",
+            repo: "artsycoder533/netlify-cms",
           },
-          media_folder: '/dist/images',
+          config_file: "/config.yml",
+          media_folder: "/dist/images",
           collections: [
             {
-              name: 'hero',
-              label: 'Hero',
+              name: "hero",
+              label: "Hero",
               files: [
                 {
-                  file: '/dist/data/hero.yml',
-                  label: 'Hero',
-                  name: 'hero',
+                  file: "/dist/data/hero.yml",
+                  label: "Hero",
+                  name: "hero",
                   fields: [
-                    { name: 'heading', label: 'Heading', widget: 'string' },
-                    { name: 'subheading', label: 'Subheading', widget: 'string' },
-                    { name: 'background_image', label: 'Background Image', widget: 'image' }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+                    { name: "heading", label: "Heading", widget: "string" },
+                    {
+                      name: "subheading",
+                      label: "Subheading",
+                      widget: "string",
+                    },
+                    {
+                      name: "background_image",
+                      label: "Background Image",
+                      widget: "image",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
       });
     </script>
   </body>
 </html>
-
-
